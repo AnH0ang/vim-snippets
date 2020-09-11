@@ -102,6 +102,10 @@ snippet fig "Figure environment" b
 \end{figure}
 endsnippet
 
+snippet cancel "cancel" wA
+\cancel{${1:${VISUAL}}}$0
+endsnippet
+
 snippet enum "Enumerate" b
 \begin{enumerate}[(i)]
 	\item $0
@@ -346,8 +350,18 @@ snippet ceil "ceil" iA
 endsnippet
 
 context "math()"
+snippet angle "angle" wA
+\langle $1${VISUAL} \rangle$0
+endsnippet
+
+context "math()"
+snippet round "round to nearest integer" iA
+\left\lfloor $1${VISUAL} \right\rceil$0
+endsnippet
+
+context "math()"
 snippet floor "floor" iA
-\left\lfloor $1 \right\rfloor$0
+\left\lfloor $1${VISUAL} \right\rfloor$0
 endsnippet
 
 snippet pmat "pmat" iA
@@ -633,7 +647,7 @@ endsnippet
 priority 10
 context "math()"
 snippet "bar" "bar" riA
-\overline{$1}$0
+\overline{$1${VISUAL}}$0
 endsnippet
 
 priority 100
@@ -644,7 +658,7 @@ endsnippet
 
 priority 10
 context "math()"
-snippet "tilde" "tilde" riA
+snippet "tilde" "tilde" rA
 \tilde{$1${VISUAL}}$0
 endsnippet
 
